@@ -16,8 +16,8 @@ export default function PizzaList() {
   const user = useSelector(selectUser);
   const pizzas = useSelector(selectPizzas);
 
-  console.log("PIZZAS:", pizzas);
-  console.log("USER IN COMPONENT", user);
+  //   console.log("PIZZAS:", pizzas);
+  //   console.log("USER IN COMPONENT", user);
   return (
     <div>
       <h1>Hello {user.name}</h1>List

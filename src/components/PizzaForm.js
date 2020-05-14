@@ -6,12 +6,12 @@ export default function PizzaForm() {
   const [description, setDescription] = useState("");
   const dispatch = useDispatch();
 
-  console.log("WHAT IS DISPATCH", dispatch);
+  //   console.log("WHAT IS DISPATCH", dispatch);
 
   function handleSubmit(event) {
     event.preventDefault();
 
-    console.log(name, description);
+    // console.log(name, description);
 
     const action = {
       type: "ADD_PIZZA",

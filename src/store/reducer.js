@@ -29,6 +29,20 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
+    case "ADD_PIZZA": {
+      // mutation :( state.push(action.payload)?
+
+      // console.log("STATE:", state, "ACTION:", action);
+      const newPizza = {
+        id: state.pizzas.length,
+        name: action.payload.name,
+        description: action.payload.description,
+        bought: 0,
+      };
+
+      //   console.log("NEW PIZZA:", newPizza);
+      return { ...state, pizzas: [...state.pizzas, newPizza] };
+    }
     default: {
       return state;
     }
