@@ -20,6 +20,12 @@ state = {
 # Setup Redux
 
 - Setup the redux store
+  - `createStore()`
+  - `reducer` with initialState
+  - export your `store`
+  - Use the Provider in index.js
+  - done!
+  - Test: Redux devtools
 
 # Make Components
 
