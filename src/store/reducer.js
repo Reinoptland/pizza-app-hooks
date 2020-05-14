@@ -1,7 +1,7 @@
 const initialState = {
   user: {
     name: "Helva",
-    likes: [],
+    likes: [161235, 67283],
   },
   pizzas: [
     {

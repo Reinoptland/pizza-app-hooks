@@ -12,9 +12,16 @@ function selectPizzas(reduxState) {
   });
 }
 
+function selectLikedPizzas(reduxState) {
+  return reduxState.user.likes.map((pizzaId) => {
+    return reduxState.pizzas.find((pizza) => pizza.id === pizzaId).name;
+  });
+}
+
 export default function PizzaList() {
   const user = useSelector(selectUser);
   const pizzas = useSelector(selectPizzas);
+  const likedPizzaNames = useSelector(selectLikedPizzas);
   const dispatch = useDispatch();
 
   //   console.log("PIZZAS:", pizzas);
@@ -27,6 +34,12 @@ export default function PizzaList() {
   return (
     <div>
       <h1>Hello {user.name}</h1>List
+      <h3>
+        Liked pizzas:{" "}
+        {likedPizzaNames.map((name) => (
+          <strong>{name}</strong>
+        ))}
+      </h3>
       <ul>
         {pizzas.map((pizza) => {
           return (
