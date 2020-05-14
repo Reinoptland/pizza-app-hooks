@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 function selectUser(reduxState) {
   //   console.log("STATE IN SELECTOR", reduxState);
@@ -15,11 +15,14 @@ function selectPizzas(reduxState) {
 export default function PizzaList() {
   const user = useSelector(selectUser);
   const pizzas = useSelector(selectPizzas);
+  const dispatch = useDispatch();
 
   //   console.log("PIZZAS:", pizzas);
   //   console.log("USER IN COMPONENT", user);
   function like(pizzaId) {
     console.log("I like dis", pizzaId);
+    const action = { type: "LIKE_PIZZA", payload: pizzaId };
+    dispatch(action);
   }
   return (
     <div>
