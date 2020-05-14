@@ -1,6 +1,7 @@
 const initialState = {
   user: {
     name: "Helva",
+    likes: [],
   },
   pizzas: [
     {
@@ -43,6 +44,16 @@ export default function reducer(state = initialState, action) {
       //   console.log("NEW PIZZA:", newPizza);
       return { ...state, pizzas: [...state.pizzas, newPizza] };
     }
+
+    case "LIKE_PIZZA": {
+      console.log("STATE:", state, "ACTION", action);
+
+      return {
+        ...state,
+        user: { ...state.user, likes: [...state.user.likes, action.payload] },
+      };
+    }
+
     default: {
       return state;
     }
