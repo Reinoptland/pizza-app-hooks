@@ -35,7 +35,10 @@ state = {
 
 # Get the data from the redux store, and use it the components
 
-- useSelector (new)
+- import useSelector (new)
+- write a selector function (returns part of the state)
+- You pass your selector into useSelector
+- Display the data
 
 # Implement behaviour
 
