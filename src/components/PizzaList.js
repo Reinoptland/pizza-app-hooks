@@ -18,6 +18,9 @@ export default function PizzaList() {
 
   //   console.log("PIZZAS:", pizzas);
   //   console.log("USER IN COMPONENT", user);
+  function like(pizzaId) {
+    console.log("I like dis", pizzaId);
+  }
   return (
     <div>
       <h1>Hello {user.name}</h1>List
@@ -29,6 +32,7 @@ export default function PizzaList() {
                 {pizza.name} ({pizza.bought})
               </h3>
               <p>{pizza.description}</p>
+              <button onClick={() => like(pizza.id)}>❤️</button>
             </li>
           );
         })}
