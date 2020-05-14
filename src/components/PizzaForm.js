@@ -1,13 +1,24 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 export default function PizzaForm() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const dispatch = useDispatch();
+
+  console.log("WHAT IS DISPATCH", dispatch);
 
   function handleSubmit(event) {
     event.preventDefault();
 
     console.log(name, description);
+
+    const action = {
+      type: "ADD_PIZZA",
+      payload: { name: name, description: description },
+    };
+
+    dispatch(action);
 
     setName("");
     setDescription("");
